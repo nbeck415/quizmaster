@@ -2,9 +2,11 @@ version: "3.7"
 services:
   app:
     build: .
+    labels:
+      shipyard.route: '/'
     stdin_open: true
     tty: true
-    ports: ["9000:9000"]
+    ports: "9000:9000"
     volumes:
       - ./conf/quiz:/app/conf/quiz
       - ./conf/application.conf:/app/conf/application.conf
